@@ -9,7 +9,7 @@ An iOS demo app that finds movies in The Open Movie Database.
 
 # The Open Movie Database API and API Key
 
-The Open Movie Database (OMDb) API is maintained by Brian Fritz (see http://www.omdbapi.com). If you want to run the application in a live environment, you will first need to obtain an API key from the OMDb. Keys are available at no cost (here)[http://www.omdbapi.com/apikey.aspx].
+The Open Movie Database (OMDb) API is maintained by Brian Fritz (see http://www.omdbapi.com). If you want to run the application in a live environment, you will first need to obtain an API key from the OMDb. Keys are available at no cost [here](http://www.omdbapi.com/apikey.aspx).
 
 Once you have an API key, edit it into the `MovieServiceEndpoint.swift` file as shown below:
 ![image](https://github.com/ncke/movie-search/blob/c1a9f1233d98342028b63cd2c41905014d570c72/Other/apikey.png)
