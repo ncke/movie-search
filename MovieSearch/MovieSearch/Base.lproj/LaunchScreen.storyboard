@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bEB-dx-qoC">
+                                <rect key="frame" x="0.0" y="158.5" width="414" height="112.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🎥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tfm-eC-Cox">
+                                        <rect key="frame" x="32" y="24" width="58" height="64.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="54"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="CalloutBackground"/>
+                                <constraints>
+                                    <constraint firstItem="Tfm-eC-Cox" firstAttribute="top" secondItem="bEB-dx-qoC" secondAttribute="top" constant="24" id="3Zo-XM-uWP"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Tfm-eC-Cox" secondAttribute="trailing" constant="324" id="6SK-8g-2qr"/>
+                                    <constraint firstAttribute="bottom" secondItem="Tfm-eC-Cox" secondAttribute="bottom" constant="24" id="7z8-RB-V2p"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Search" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXQ-sU-u0i">
+                                <rect key="frame" x="32" y="92" width="263" height="50.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="42"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Tfm-eC-Cox" firstAttribute="leading" secondItem="HXQ-sU-u0i" secondAttribute="leading" id="0Tk-oH-Ini"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="HXQ-sU-u0i" secondAttribute="trailing" constant="32" id="4Kv-Ro-sEl"/>
+                            <constraint firstItem="bEB-dx-qoC" firstAttribute="top" secondItem="HXQ-sU-u0i" secondAttribute="bottom" constant="16" id="5K9-HD-Gi0"/>
+                            <constraint firstItem="HXQ-sU-u0i" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="JkZ-sL-fdo"/>
+                            <constraint firstItem="HXQ-sU-u0i" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="48" id="Nf1-wg-SoV"/>
+                            <constraint firstItem="bEB-dx-qoC" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="qhM-el-uBO"/>
+                            <constraint firstAttribute="trailing" secondItem="bEB-dx-qoC" secondAttribute="trailing" id="vt2-Dl-Oxm"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="CalloutBackground">
+            <color red="0.92100000381469727" green="0.92100000381469727" blue="0.92100000381469727" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
