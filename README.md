@@ -63,4 +63,6 @@ The app would benefit from tests to provide stability for ongoing development.
 
 The movie search is currently limited to showing the first hundred results. Ideally, further results would be polled from the service when the user scrolls to the end of the list with a placeholder shown. A simple alternative would be to include a message at the end of the list stating that more results are available (we do know how many) -- this prompts the user to refine their search.
 
-The size of the poster cache is limited to 400 items because of the larger data sizes involved (usually around 40Kb per poster). Once evicted from the cache, posters are not re-fetched from the service unless a new search request is made. In practice this is not problematic, but ideally the app would re-fetch automatically. Time constraints.
+The size of the poster cache is limited to 400 items because of the larger data sizes involved (usually around 40Kb per poster). Once evicted from the cache, posters are not re-fetched from the service unless a new search request is made. In practice this is not problematic, but ideally the app would re-fetch automatically.
+
+The OMDb service is returning some duplicate search results, even within the same page. These could be filtered out by IMDB identifier. Time constraints.
