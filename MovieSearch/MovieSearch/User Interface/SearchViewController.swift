@@ -29,6 +29,7 @@ class SearchViewController: UIViewController, CoordinatedViewController {
     }
 
     @IBAction func onTappedFindIt(_ sender: Any) {
+        titleTextField.resignFirstResponder()
         startSearch()
     }
 

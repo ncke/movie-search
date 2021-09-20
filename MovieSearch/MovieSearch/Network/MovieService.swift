@@ -46,6 +46,9 @@ class MovieService {
     /// Delegate to receive movie search results.
     weak var delegate: MovieServiceDelegate?
 
+    /// IMDB identifiers received in the search (for duplicate removal).
+    private var receivedIMDBs = Set<String>()
+
 }
 
 // MARK: - Movie Search
@@ -61,6 +64,7 @@ extension MovieService {
 
         // New search.
         cancelSearchNetworking()
+        receivedIMDBs = []
 
         // Commence the paged search.
         try pagedSearch(title: title, page: 1)
@@ -103,10 +107,11 @@ private extension MovieService {
 
             case .success(let movieSearch):
                 // Pass the results to the delegate.
-                self.delegate?.movieService(
-                    self,
-                    didObtainMovies: movieSearch.search ?? []
+                let uniques = self.filterDuplicates(
+                    movies: movieSearch.search ?? []
                 )
+
+                self.delegate?.movieService(self, didObtainMovies: uniques)
 
                 let nextPage = page + 1
                 guard
@@ -170,6 +175,27 @@ private extension MovieService {
         page <= MovieService.highFrequencyPages
             ? MovieService.highFrequencyInterval
             : MovieService.lowFrequencyInterval
+    }
+
+    /// Given an array of movies, returns an array of movies that have not
+    /// already been received during this search.
+    func filterDuplicates(movies: [Movie]) -> [Movie] {
+        var unique = [Movie]()
+        movies.forEach { movie in
+            guard
+                let identifier = movie.imdbId,
+                !identifier.isEmpty,
+                identifier != "N/A",
+                !receivedIMDBs.contains(identifier)
+            else {
+                return
+            }
+
+            receivedIMDBs.insert(identifier)
+            unique.append(movie)
+        }
+
+        return unique
     }
 
 }

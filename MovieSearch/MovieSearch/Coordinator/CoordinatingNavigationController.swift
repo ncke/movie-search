@@ -16,6 +16,8 @@ class CoordinatingNavigationController: UINavigationController {
     }()
 
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         searchCoordinator.isNavigationControllerReady = true
     }
 }

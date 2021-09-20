@@ -18,7 +18,6 @@ class DetailViewController: UIViewController, CoordinatedViewController {
     @IBOutlet weak var stateView: UIView!
     @IBOutlet weak var stateImageView: UIImageView!
 
-
     weak var coordinator: Coordinator?
     var searchCoordinator: SearchCoordinator? {
         coordinator as? SearchCoordinator
