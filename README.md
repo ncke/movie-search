@@ -18,12 +18,12 @@ Once you have an API key, edit it into the `MovieServiceEndpoint.swift` file as 
 
 This app has an MVVM-C architecture with a single coordinator and two screens. The search screen allows the user to enter movie keywords and begin a search, it also shows the results. Tapping on a result will transition to a detail screen to show information for that movie.
 
-# Coordinator:
+### Coordinator:
 * SearchCoordinator: handles routing between screens using a navigation controller. The coordinator also manages the API gateway and data stores.
 
 The coordinator provides model instances to the user interface elements as required. Models are immediately available if they are already cached, or they may arrive later if fetched through the movie service API gateway. This means that updates must be notified to the user interface as new models arrive.
 
-# Models:
+### Models:
 * Movie: represents summary information about a movie.
 * MovieDetail: detailed movie information.
 * Poster: a movie poster, encapsulates data that can be used to generate a `UIImage`.
@@ -31,13 +31,13 @@ The coordinator provides model instances to the user interface elements as requi
 
 The Movie Detail model interprets the structured text of the `awards` field to produce the hieroglyphic representation. A similar approach is used for critic's scores. These help to add some visual interest to the detail information.
 
-# Data Store:
+### Data Store:
 * DataStore: a generic data store that provides store/fetch functionality.
 * RandomAccessDataStore: a generic data store that provides random access based on an index.
 
 The data stores are both based on `NSCache` which provides a simple thread-safe store.
 
-# Network Service:
+### Network Service:
 * MovieService: the API gateway providing access to search results, detailed movie information and poster images.
 * MovieServiceDelegate: used to pass search results back to the app as they arrive.
 * MovieServiceEndpoint: an enum used to construct URL's for the service.
@@ -47,7 +47,7 @@ Callers only need to interact with the `MovieService` class and implement a `Mov
 
 The OMDb API uses paging with ten movies returned for each request. The app fetches the first ten pages automatically, delaying 0.5 seconds between the first three services calls and then 3 seconds between the remainder (to reduce pressure on the remote service and preserve local bandwidth for poster requests). Rather than callbacks, a delegate is used to return search results (to the coordinator) because multiple sets of result (pages) are anticipated.
 
-# User Interface:
+### User Interface:
 * SearchViewController: uses a collection view to present results, can animtate a banner to show errors.
 * MovieCollectionViewCell: the collection view cell used to show movie summaries in the search view controller.
 * DetailViewController: shows movie details, the header has adaptive constraints to reduce the size of the poster in landscape orientation.
